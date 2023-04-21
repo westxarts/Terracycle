@@ -1,0 +1,389 @@
+/*----------*----------*----------*----------*---------- Reset */
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: roboto; */
+}
+
+/*----------*----------*----------*----------*---------- Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+
+/*----------*----------*----------*----------*---------- General Styles */
+:root {
+  font-size: 62.5%;
+
+  /*----------*----------*----------* Website Theme */
+  --color-primary: #ffffff;
+  
+  --color-secondary: #60a8fb;
+
+  --color-tertiary: #c2daf6;
+
+  /*----------*----------*----------* Padding */
+  /* 
+        --------------------- Sizing Nature
+        d     = dynamic
+        st    = static
+
+        --------------------- Sizing
+
+        l     = large
+        m     = medium
+        s     = small
+        xs    = extra small
+        c     = customized
+
+          
+        --------------------- Orientation
+        v  = vertical   (top & bottom)
+        h  = horizontal (right & left)
+  */
+
+  /* Dynamic */
+  --padding-d-l-v: calc(2rem + 12vh);
+  --padding-d-l-h: calc(2rem + 12vw);
+
+  --padding-d-mc-v: calc(1rem + 4vh);
+  --padding-d-mc-h: calc(1rem + 4vw);
+
+  --padding-d-m-v: calc(1rem + 2vh);
+  --padding-d-m-h: calc(1rem + 2vw);
+
+  --padding-d-s-h: calc(1rem + 1vw);
+  --padding-d-s-v: calc(1rem + 1vh);
+
+  /* Static */
+  --padding-st-l-h: 3rem;
+  --padding-st-l-v: 2rem;
+
+  --padding-st-m-h: 2.5rem;
+  --padding-st-m-v: 1.5rem;
+
+  --padding-st-s-h: 2rem;
+  --padding-st-s-v: 1rem;
+
+  /*----------*----------*----------* Typography */
+
+  /* 
+      --------------------- Sizing Nature
+      d     = dynamic
+      st    = static
+      
+      --------------------- Sizing
+      xl    = extra large
+      l     = large
+      m     = medium
+      s     = small
+      xs    = extra small
+      c     = customized
+      
+      --------------------- Family
+      font-family: 'Oswald', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+*/
+
+  /* Dynmaic */
+  --font-size-d-lc: calc(3rem + 3.5vw);
+  --font-size-d-l: calc(1rem + 3vw);
+  --font-size-d-mc: calc(2rem + 2.5vw);
+  --font-size-d-m: calc(1rem + 2vw);
+  --font-size-d-sc: calc(1rem + 1.5vw);
+  --font-size-d-s: calc(1rem + 1vw);
+
+  /* Static */
+  --font-size-st-xl: 4rem;
+  --font-size-st-lc: 3.5rem;
+  --font-size-st-l: 3rem;
+  --font-size-st-mc: 2.5rem;
+  --font-size-st-m: 2rem;
+  --font-size-st-sc: 1.5rem;
+  --font-size-st-s: 1rem;
+
+  /* Family */
+  --font-family-title: "Oswald", sans-serif;
+  --font-family-content: "Plus Jakarta Sans", sans-serif;
+}
+
+/*----------*----------*----------*----------*---------- Utility Classes */
+
+/*----------*----------*----------* Section Padding */
+.section__padding {
+    padding: var(--padding-d-l-v) var(--padding-d-l-h);
+  }
+  
+  /*----------*----------*----------* Section Title */
+  .section__title {
+    font-size: var(--font-size-d-sc);
+    font-weight: 900;
+  }
+  
+  /*----------*----------*----------* Section Para */
+  .section__para {
+    font-size: var(--font-size-st-sc);
+    color: var(--color-quaternary);
+  }
+  
+  /*----------*----------*----------*----------*---------- Overall Layout */
+  
+  .container {
+    display: grid;
+    grid-template-columns:
+      [container-start] repeat(12, minmax(min-content, 12.5rem))
+      [container-end];
+  
+    grid-template-rows: repeat(9, min-content);
+    justify-content: center;
+  }
+  
+  .overall-layout {
+    grid-column: container-start / container-end;
+  }
+
+
+/* ------------------------------------------------------------- header -------------- */  
+
+.header__nav--logo {
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__nav--logo i {
+    font-size: 4rem;
+}
+
+.header__nav--logo h6 {
+    color: var(--color-secondary);
+    font-size: 2.5rem;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10rem;
+    color: var(--color-primary);
+}
+
+.header__nav--navlinks {
+    display: flex;
+    color: var(--color-primary);
+}
+
+.header__nav--navlinks a {
+    color: var(--color-secondary);
+    font-size: var(--font-size-st-m);
+}
+
+/* ------------------------------------------------------------- Hero section -------------- */
+.hero__container {
+    display: flex;
+    margin-top: 5rem;
+}
+
+.hero__container--image {
+    width: 200%;
+}
+
+.hero__container--image img {
+    width: 130%;
+    margin-top: -7rem;
+}
+
+.hero__container--contents {
+    margin-right: 5rem;
+}
+
+.hero__container--contents__title {
+    font-size: var(--font-size-d-l);
+    font-weight: none;
+    color: var(--color-secondary);
+}
+
+.hero__container--contents__para {
+    color: var(--color-secondary);
+    margin-top: 4rem;
+}
+
+.hero__container--contents__btn {
+    margin-top: 4rem;
+}
+
+.hero__container--contents__btn a {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.hero__container--contents__btn a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    transition: ease .5s ease-in-out;
+    outline: 2px solid var(--color-secondary);
+}
+
+
+/* ------------------------------------------------------------- about section -------------- */
+
+
+.about {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.about__container--img {
+    width: 200%;
+}
+
+.about__container--img img {
+    border-radius: 30%;
+}
+
+.about__container {
+    display: flex;
+    gap: 6rem;
+}
+
+.about__container--content__title {
+    font-size: var(--font-size-d-l);
+    margin-bottom: 2rem;
+}
+
+.about__container--content__btn a {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.about__container--content__btn {
+    margin-top: 4rem;
+    transition: ease .5s ease-in-out;
+    /* outline: 2px solid transparent; */
+}
+
+.about__container--content__btn a:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    transition: ease .5s ease-in-out;
+    outline: 2px solid var(--color-primary);
+}
+
+/* ------------------------------------------------------------- Objectives section -------------- */
+
+.objectives__container {
+    display: flex;
+    gap: 4rem;
+}
+
+.objectives__container--team-img {
+    width: 100%;
+}
+
+.objectives__container--team-img img {
+    width: 120%;
+}
+
+.objectives__container--content__title {
+    font-size: var(--font-size-d-l);
+    margin-bottom: 2rem;
+    color: var(--color-secondary);
+}
+
+.objectives__container--content__para {
+    color: var(--color-secondary);
+}
+
+/* ------------------------------------------------------------- services section -------------- */
+
+.services {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.services__container--contents {
+    text-align: center;
+}
+
+.services__container--cards__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services__container--cards__card i {
+    font-size: 10rem;
+    margin-bottom: 3rem;
+    color: var(--color-secondary);
+}
+
+.services__container--cards__card {
+    background-color: var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.services__container--cards__card p {
+    color: var(--color-secondary);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.services__container--contents__title {
+    font-size: var(--font-size-d-l);
+}
+
+/* ------------------------------------------------------------- blog section -------------- */
+
+.blog__container--cards__card--img {
+    width: 100%;
+    height: 50%;
+    margin-top: 2rem;
+}
+
+.blog__container--cards__card--img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.blog__container--contents__title {
+    font-size: var(--font-size-d-l);
+    color: var(--color-secondary);
+    text-align: center;
+}
+
+.blog__container--cards__card--mini-title {
+    padding: 2rem 0;
+    color: var(--color-secondary);
+}
+
+.blog__container--cards__card--desc {
+    color: grey;
+}
+
+.blog__container--cards__card {
+    padding: 2rem 1rem;
+    box-shadow: 5px 5px 8px 2px var(--color-secondary);
+    border-radius: 1rem;
+}
+
+.blog__container--cards__card .hero__container--contents__btn {
+    margin-bottom: 2rem;
+}
+
+/* ------------------------------------------------------------- footer section -------------- */
+.footer {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    text-align: center;
+}
+
+
+
+
+
